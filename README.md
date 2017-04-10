@@ -37,15 +37,12 @@ You can edit the existing design of Blossom by overriding `.styl` files in `src`
 
 ###### Make sure to make use of/change variables in `variables.styl`
 
-### Issues
-If you find any issues with running or building the boilerplate on certain machines open up an issue
-
 ### Hosting
 The main purpose of this boilerplate is to output static files which is compatible with the majority of hosting services out there.
 
 My hosting of choice for static files is [Surge](http://surge.sh)
 
-##### Get hosting
+#### Get hosting
 
 Install Surge: `npm install --global surge`
 
@@ -54,5 +51,8 @@ Build the boilerplate to the `dist` folder: `gulp prod`
 Upload to Surge: `surge ./dist`
 
 [Find out more about getting started with Surge here](http://surge.sh/help/getting-started-with-surge)
+
+### Issues
+If you find any issues with running or building the boilerplate on certain machines open up an issue
 
 Licensed under MIT - Copyright (c) 2017
