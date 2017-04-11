@@ -5,6 +5,17 @@ Blossom UI is a Stylus environment for developers to theme their website; alread
 
 [Find out more about Blossom](http://getblossom.io/ "Blossom UI")
 
+### Features
+- Stylus powered Blossom framework for CSS
+- PugJS for HTML templating
+- Hot reloading of CSS and HTML content using Browser Sync
+- Production & Development environments
+- JS file minifier
+- HTML compression
+- Image optimization
+- CSS compression
+- Detailed Gulp CLI debug
+
 ### Setup
 Download or clone the repository to your directory of choice.
 
