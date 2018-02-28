@@ -1,34 +1,32 @@
 .button
   display inline-block
   position relative
-  overflow hidden
   border-radius border-radius-normal
-  color text-button-default
+  color text-default
   background-color background-light-grey
   outline 0
-  padding .5em 1.8em
+  padding .75em 1.8em
   text-align center
   border 0
-  height em-height
-  line-height 1.6em
+  line-height 1.125
   font-size font-size-standard
   font-weight 500
   cursor pointer
   transition all 0.2s ease
   vertical-align top
-  for size in ('small' 'medium' 'large' 'big' 'massive')
+  for size in ('small' 'medium' 'large' 'big')
     &.{size}
       btn-size(size)
-
   &.outlined
     box-sizing border-box
     background-color transparent
     box-shadow inset 0px 0px 0px 1px background-light-grey
-    color text-button-default
+    color text-default
     &.white
       color #fff
       &:hover
-        color text-button-default
+        background-color #fff
+        color text-default
   &:hover
     box-shadow none
     background-color background-light-grey
@@ -36,6 +34,9 @@
     &.{clr}
       btn-color(clr)
       btn-background(clr)
+      &.disabled, &[disabled], &.loading
+        pointer-events none
+        btn-disabled-color(clr)
       &.outlined
         btn-color-outlined(clr)
         background-color transparent
@@ -44,7 +45,7 @@
         btn-color(clr)
         btn-background-hover(clr)
   &.labeled
-    padding .5em 1.8em .5em 4.2em
+    padding-left 4.2em
     i
       absolute top left
       width 2.8rem
@@ -52,18 +53,33 @@
       text-align center
       color #fff
       height 100%
-      font-size 1rem
-      line-height em-height
+      line-height 2.7
     &.labeled-right
-      padding .5em 4.2rem .5em 1.8rem
+      padding-left 1.8em
+      padding-right 4.2em
       i
         absolute top right
         left auto
   &.icon
-    padding 0 0.8275rem
+    padding auto 0.8275rem
   &:hover
-    color hover-text-button-default
-    background-color hover-background-light-grey
-    box-shadow inset 0 -2px 0 rgba(37,51,66,.14)
-  &:active
-    box-shadow inset 0 2px 0 rgba(37,51,66,.14)
+    color text-default
+    background-color darken(background-light-grey, 4%)
+    text-decoration none
+  &.disabled, &[disabled]
+    @extends .disabled
+    color text-disabled
+  &.loading
+    @extends .disabled
+    color text-disabled
+    span
+      color inherit !important
+    .loader
+      height 1.125em
+      width 1.125em
+      line-height 1em
+      border-width .2em
+      display inline-block
+      vertical-align top
+    .loader + span, span + .loader
+      margin-left .8em
